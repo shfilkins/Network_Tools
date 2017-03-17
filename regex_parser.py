@@ -5,17 +5,17 @@
 #it appends the searched for captured items into a list which 
 #will be returned to the calling program.
 
-def search_a_file(regex, file):
+def search_file(regex, file):
     import re
-    results_lst = list()
+    tmp_lst = list()
     fhand = open(file)
     for line in fhand:
         pattern = re.search(regex, line)
         if pattern:
             searched_for = pattern.group(1)
-            tmp_list.append(searched_for)
+            tmp_lst.append(searched_for)
     fhand.close()
-    return results_lst
+    return tmp_lst
     
 #Example of how to use:
 #if you have a file from a router it will always have '#' or '>' 
